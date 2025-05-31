@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PortonSeguro</string>
+    <string name="title_activity_estado_porton">EstadoPortonActivity</string>
+    <string name="title_activity_movimiento_detectado">MovimientoDetectadoActivity</string>
+    <string name="title_activity_ver_estado">verEstadoActivity</string>
+    <string name="title_activity_login">loginActivity</string>
+    <string name="title_activity_registrar">registrarActivity</string>
+</resources>

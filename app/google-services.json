@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "800339971725",
+    "project_id": "portonseguro-af0db",
+    "storage_bucket": "portonseguro-af0db.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:800339971725:android:80d33c48a53b9302011cc4",
+        "android_client_info": {
+          "package_name": "com.example.portonseguro"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFpfOXQkrBcQo5AenU3NZIscRLbrtsWXc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
