@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+        <application
+            android:allowBackup="true"
+            android:dataExtractionRules="@xml/data_extraction_rules"
+            android:fullBackupContent="@xml/backup_rules"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/Theme.PortonSeguro"
+            tools:targetApi="31">
+            <activity
+                android:name=".conexionPortonActivity"
+                android:exported="true"
+                android:label="@string/title_activity_conexion_porton"
+                android:theme="@style/Theme.PortonSeguro">
+
+                <intent-filter>
+                    <action android:name="android.intent.action.MAIN" />
+                    <category android:name="android.intent.category.LAUNCHER" />
+                </intent-filter>
+            </activity>
+
+            <activity
+                android:name=".registrarActivity"
+                android:exported="true"
+                android:label="@string/title_activity_registrar"
+                android:theme="@style/Theme.PortonSeguro" />
+            <activity
+                android:name=".LoginActivity"
+                android:exported="true"
+                android:label="@string/title_activity_login"
+                android:theme="@style/Theme.PortonSeguro">
+            </activity>
+            <activity
+                android:name=".verEstadoActivity"
+                android:exported="false"
+                android:label="@string/title_activity_ver_estado"
+                android:theme="@style/Theme.PortonSeguro" />
+            <activity
+                android:name=".MovimientoDetectadoActivity"
+                android:exported="true"
+                android:label="@string/title_activity_movimiento_detectado"
+                android:theme="@style/Theme.PortonSeguro" />
+            <activity
+                android:name=".EstadoPortonActivity"
+                android:exported="true"
+                android:label="@string/title_activity_estado_porton"
+                android:theme="@style/Theme.PortonSeguro" />
+        </application>
+
+    </manifest>
