@@ -5,4 +5,6 @@
     <string name="title_activity_ver_estado">verEstadoActivity</string>
     <string name="title_activity_login">loginActivity</string>
     <string name="title_activity_registrar">registrarActivity</string>
+    <string name="default_web_client_id">TU_CLIENT_ID</string>
+    <string name="title_activity_conexion_porton">conexionPortonActivity</string>
 </resources>

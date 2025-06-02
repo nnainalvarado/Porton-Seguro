@@ -2,34 +2,38 @@ package com.example.portonseguro
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
 
 class registrarActivity : AppCompatActivity() {
+
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registrar)
 
-        val emailEditText = findViewById<EditText>(R.id.editTextEmailRegister)
-        val passwordEditText = findViewById<EditText>(R.id.editTextPasswordRegister)
-        val confirmEditText = findViewById<EditText>(R.id.editTextConfirmPassword)
-        val registerButton = findViewById<Button>(R.id.buttonRegister)
+        auth = FirebaseAuth.getInstance()
 
-        registerButton.setOnClickListener {
-            val email = emailEditText.text.toString()
-            val password = passwordEditText.text.toString()
-            val confirm = confirmEditText.text.toString()
+        val emailRegister = findViewById<EditText>(R.id.emailRegister)
+        val passwordRegister = findViewById<EditText>(R.id.passwordRegister)
+        val btnRegister = findViewById<Button>(R.id.btnRegister)
 
-            if (email.isNotEmpty() && password.isNotEmpty() && password == confirm) {
-                // Aquí va tu lógica de registro
-                Toast.makeText(this, "Usuario registrado", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this, LoginActivity::class.java))
-            } else {
-                Toast.makeText(this, "Verifica los datos", Toast.LENGTH_SHORT).show()
-            }
+        btnRegister.setOnClickListener {
+            val email = emailRegister.text.toString()
+            val password = passwordRegister.text.toString()
+
+            auth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT).show()
+                        startActivity(Intent(this, LoginActivity::class.java))
+                        finish()
+                    } else {
+                        Toast.makeText(this, "Error al registrarse", Toast.LENGTH_SHORT).show()
+                    }
+                }
         }
     }
 }

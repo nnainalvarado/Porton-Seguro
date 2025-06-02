@@ -2,37 +2,44 @@ package com.example.portonseguro
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
 
-class loginActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
+
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        val emailEditText = findViewById<EditText>(R.id.editTextEmail)
-        val passwordEditText = findViewById<EditText>(R.id.editTextPassword)
-        val loginButton = findViewById<Button>(R.id.buttonLogin)
-        val registerButton = findViewById<Button>(R.id.buttonGoToRegister)
+        auth = FirebaseAuth.getInstance()
 
-        loginButton.setOnClickListener {
-            val email = emailEditText.text.toString()
-            val password = passwordEditText.text.toString()
+        val emailLogin = findViewById<EditText>(R.id.emailLogin)
+        val passwordLogin = findViewById<EditText>(R.id.passwordLogin)
+        val btnLogin = findViewById<Button>(R.id.btnLogin)
+        val btnGoToRegister = findViewById<Button>(R.id.btnGoToRegister)
 
-            if (email.isNotEmpty() && password.isNotEmpty()) {
-                // Aquí va tu lógica de autenticación
-                Toast.makeText(this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show()
-                // startActivity(Intent(this, MainActivity::class.java)) // o pantalla principal
-            } else {
-                Toast.makeText(this, "Completa todos los campos", Toast.LENGTH_SHORT).show()
-            }
+        btnLogin.setOnClickListener {
+            val email = emailLogin.text.toString()
+            val password = passwordLogin.text.toString()
+
+            auth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        startActivity(Intent(this, MovimientoDetectadoActivity::class.java))
+                        finish()
+                    } else {
+                        Toast.makeText(this, "Error al iniciar sesión", Toast.LENGTH_SHORT).show()
+                    }
+                }
         }
 
-        registerButton.setOnClickListener {
-            startActivity(Intent(this, RegistrarActivity::class.java))
+        btnGoToRegister.setOnClickListener {
+            startActivity(Intent(this, registrarActivity::class.java))
         }
     }
 }
+
+
