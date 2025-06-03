@@ -34,15 +34,18 @@ class MovimientoDetectadoActivity : AppCompatActivity() {
         val iconPorton = navbar.findViewById<ImageView>(R.id.porton)
         val iconHome = navbar.findViewById<ImageView>(R.id.home)
         val iconRadar = navbar.findViewById<ImageView>(R.id.radar)
+        val iconAjuste = navbar.findViewById<ImageView>(R.id.ajustes)
 
         val underlinePorton = navbar.findViewById<View>(R.id.underline_porton)
         val underlineHome = navbar.findViewById<View>(R.id.underline_home)
         val underlineRadar = navbar.findViewById<View>(R.id.underline_radar)
+        val underlineAjuste = navbar.findViewById<ImageView>(R.id.underline_ajuste)
 
         fun setActive(tab: String) {
             underlinePorton.visibility = if (tab == "porton") View.VISIBLE else View.GONE
             underlineHome.visibility = if (tab == "home") View.VISIBLE else View.GONE
             underlineRadar.visibility = if (tab == "radar") View.VISIBLE else View.GONE
+            underlineAjuste.visibility = if (tab == "ajustes") View.VISIBLE else View.GONE
         }
 
         setActive("radar")
@@ -56,6 +59,10 @@ class MovimientoDetectadoActivity : AppCompatActivity() {
         }
 
         iconRadar.setOnClickListener {
+            startActivity(Intent(this, MovimientoDetectadoActivity::class.java))
+        }
+
+        iconAjuste.setOnClickListener {
             startActivity(Intent(this, MovimientoDetectadoActivity::class.java))
         }
 

@@ -12,7 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PortonSeguro"
         tools:targetApi="31">
-
+        <activity
+            android:name=".AjustesActivity"
+            android:exported="false"
+            android:label="@string/title_activity_ajustes"
+            android:theme="@style/Theme.PortonSeguro" />
         <activity
             android:name=".LoginActivity"
             android:exported="true"
@@ -20,46 +24,40 @@
             android:theme="@style/Theme.PortonSeguro">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".conexionPortonActivity"
             android:exported="true"
             android:label="@string/title_activity_conexion_porton"
             android:theme="@style/Theme.PortonSeguro" />
-
         <activity
             android:name=".registrarActivity"
             android:exported="true"
             android:label="@string/title_activity_registrar"
             android:theme="@style/Theme.PortonSeguro" />
-
         <activity
             android:name=".navbarActivity"
             android:exported="false"
             android:label="@string/title_activity_navbar"
             android:theme="@style/Theme.PortonSeguro" />
-
         <activity
             android:name=".verEstadoActivity"
             android:exported="false"
             android:label="@string/title_activity_ver_estado"
             android:theme="@style/Theme.PortonSeguro" />
-
         <activity
             android:name=".MovimientoDetectadoActivity"
             android:exported="true"
             android:label="@string/title_activity_movimiento_detectado"
             android:theme="@style/Theme.PortonSeguro" />
-
         <activity
             android:name=".EstadoPortonActivity"
             android:exported="true"
             android:label="@string/title_activity_estado_porton"
             android:theme="@style/Theme.PortonSeguro" />
-
     </application>
 
 </manifest>

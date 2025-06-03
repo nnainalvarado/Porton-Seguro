@@ -19,7 +19,7 @@ class registrarActivity : AppCompatActivity() {
         val emailRegister = findViewById<EditText>(R.id.emailRegister)
         val passwordRegister = findViewById<EditText>(R.id.passwordRegister)
         val btnRegister = findViewById<Button>(R.id.btnRegister)
-        val btnGoToLogin = findViewById<Button>(R.id.btnGoToLogin) // ← AQUÍ
+        val btnGoToLogin = findViewById<Button>(R.id.btnGoToLogin)
 
         btnRegister.setOnClickListener {
             val email = emailRegister.text.toString()

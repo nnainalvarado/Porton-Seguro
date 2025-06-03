@@ -10,11 +10,10 @@
        android:layout_alignParentBottom="true"
        android:orientation="horizontal"
        android:background="#EEEEEE"
-       android:weightSum="3"
+       android:weightSum="4"
        android:paddingTop="0dp"
        android:paddingBottom="0dp">
 
-      <!-- Portón -->
       <LinearLayout
           android:id="@+id/item_porton"
           android:layout_width="0dp"
@@ -39,7 +38,6 @@
              android:visibility="gone" />
       </LinearLayout>
 
-      <!-- Home -->
       <LinearLayout
           android:id="@+id/item_home"
           android:layout_width="0dp"
@@ -64,7 +62,6 @@
              android:visibility="gone" />
       </LinearLayout>
 
-      <!-- Radar -->
       <LinearLayout
           android:id="@+id/item_radar"
           android:layout_width="0dp"
@@ -83,6 +80,30 @@
 
          <View
              android:id="@+id/underline_radar"
+             android:layout_width="match_parent"
+             android:layout_height="3dp"
+             android:background="@android:color/holo_blue_dark"
+             android:visibility="gone" />
+      </LinearLayout>
+
+      <LinearLayout
+          android:id="@+id/item_ajustes"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
+          android:orientation="vertical"
+          android:gravity="center">
+
+         <ImageView
+             android:id="@+id/ajustes"
+             android:layout_width="40dp"
+             android:layout_height="40dp"
+             android:src="@drawable/ajustes_icon"
+             android:clickable="true"
+             android:focusable="true" />
+
+         <View
+             android:id="@+id/underline_ajuste"
              android:layout_width="match_parent"
              android:layout_height="3dp"
              android:background="@android:color/holo_blue_dark"

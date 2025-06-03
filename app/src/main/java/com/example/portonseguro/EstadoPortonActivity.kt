@@ -67,22 +67,5 @@ class EstadoPortonActivity : ComponentActivity() {
         iconRadar.setOnClickListener {
             startActivity(Intent(this, MovimientoDetectadoActivity::class.java))
         }
-
-        composeView.setContent {
-            PortonSeguroTheme {
-                MensajeExtraComposable()
             }
         }
-    }
-}
-
-annotation class preview
-
-@Composable
-fun MensajeExtraComposable() {
-    Text(
-        text = "Vista combinada: XML + Jetpack Compose",
-        style = MaterialTheme.typography.bodyLarge,
-        color = MaterialTheme.colorScheme.primary
-    )
-}
