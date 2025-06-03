@@ -1,14 +1,20 @@
 package com.example.portonseguro
 
 import android.content.Intent
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import java.text.SimpleDateFormat
 import java.util.*
+import android.os.CountDownTimer
+import android.widget.Toast
 
 class MovimientoDetectadoActivity : AppCompatActivity() {
+
+    private lateinit var mediaPlayer: MediaPlayer
+    private var countDownTimer: CountDownTimer? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,11 +31,25 @@ class MovimientoDetectadoActivity : AppCompatActivity() {
 
             mensaje.text = "Movimiento detectado frente al portón a las $horaActual.\nPresiona para abrir."
             btnIrEstado.visibility = View.VISIBLE
+
+            mediaPlayer = MediaPlayer.create(this, R.raw.alarma)
+            mediaPlayer.start()
+            btnSimular.postDelayed({
+                if (mediaPlayer.isPlaying) {
+                    mediaPlayer.stop()
+                    mediaPlayer.release()
+                }
+            }, 2000)
+
+            val intent = Intent(this, EstadoPortonActivity::class.java)
+            intent.putExtra("abrirPorton", true)
+            startActivity(intent)
         }
 
         btnIrEstado.setOnClickListener {
             startActivity(Intent(this, EstadoPortonActivity::class.java))
         }
+
         val navbar = findViewById<LinearLayout>(R.id.navbar)
         val iconPorton = navbar.findViewById<ImageView>(R.id.porton)
         val iconHome = navbar.findViewById<ImageView>(R.id.home)
@@ -39,7 +59,7 @@ class MovimientoDetectadoActivity : AppCompatActivity() {
         val underlinePorton = navbar.findViewById<View>(R.id.underline_porton)
         val underlineHome = navbar.findViewById<View>(R.id.underline_home)
         val underlineRadar = navbar.findViewById<View>(R.id.underline_radar)
-        val underlineAjuste = navbar.findViewById<ImageView>(R.id.underline_ajuste)
+        val underlineAjuste = navbar.findViewById<View>(R.id.underline_ajuste)
 
         fun setActive(tab: String) {
             underlinePorton.visibility = if (tab == "porton") View.VISIBLE else View.GONE
@@ -65,6 +85,5 @@ class MovimientoDetectadoActivity : AppCompatActivity() {
         iconAjuste.setOnClickListener {
             startActivity(Intent(this, AjustesActivity::class.java))
         }
-
     }
 }
