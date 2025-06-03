@@ -28,7 +28,7 @@ class conexionPortonActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_conexion_porton) // El layout que incluye el navbar
+        setContentView(R.layout.activity_conexion_porton)
 
         val btnConectar = findViewById<Button>(R.id.btnConectar)
         val btnDesconectar = findViewById<Button>(R.id.btnDesconectar)

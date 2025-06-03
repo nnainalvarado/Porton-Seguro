@@ -19,7 +19,6 @@ class EstadoPortonActivity : ComponentActivity() {
         val imgPorton = findViewById<ImageView>(R.id.imgEstadoPorton)
         val textEstado = findViewById<TextView>(R.id.textEstado)
         val btnCambiar = findViewById<Button>(R.id.btnCambiarEstado)
-        val composeView = findViewById<ComposeView>(R.id.composeView)
 
         var portonAbierto = true
 

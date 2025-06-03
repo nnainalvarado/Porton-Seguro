@@ -63,7 +63,7 @@ class MovimientoDetectadoActivity : AppCompatActivity() {
         }
 
         iconAjuste.setOnClickListener {
-            startActivity(Intent(this, MovimientoDetectadoActivity::class.java))
+            startActivity(Intent(this, AjustesActivity::class.java))
         }
 
     }

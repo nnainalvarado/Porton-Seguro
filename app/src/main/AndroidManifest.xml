@@ -14,7 +14,7 @@
         tools:targetApi="31">
         <activity
             android:name=".AjustesActivity"
-            android:exported="false"
+            android:exported="true"
             android:label="@string/title_activity_ajustes"
             android:theme="@style/Theme.PortonSeguro" />
         <activity
@@ -42,11 +42,6 @@
             android:name=".navbarActivity"
             android:exported="false"
             android:label="@string/title_activity_navbar"
-            android:theme="@style/Theme.PortonSeguro" />
-        <activity
-            android:name=".verEstadoActivity"
-            android:exported="false"
-            android:label="@string/title_activity_ver_estado"
             android:theme="@style/Theme.PortonSeguro" />
         <activity
             android:name=".MovimientoDetectadoActivity"

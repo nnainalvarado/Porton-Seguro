@@ -24,14 +24,12 @@
             android:textColor="@android:color/holo_green_dark"
             android:layout_marginBottom="24dp" />
 
-        <!-- Icono superior -->
         <ImageView
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:src="@drawable/icon_usuario"
             android:layout_marginBottom="24dp" />
 
-        <!-- Correo -->
         <EditText
             android:id="@+id/emailLogin"
             android:layout_width="match_parent"
@@ -42,7 +40,6 @@
             android:backgroundTint="#2196F3"
             android:layout_marginBottom="12dp" />
 
-        <!-- Contraseña -->
         <EditText
             android:id="@+id/passwordLogin"
             android:layout_width="match_parent"
@@ -53,7 +50,6 @@
             android:backgroundTint="#2196F3"
             android:layout_marginBottom="12dp" />
 
-        <!-- Botón login -->
         <Button
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
@@ -63,7 +59,6 @@
             android:backgroundTint="#2196F3"
             android:layout_marginBottom="16dp" />
 
-        <!-- Botón para ir a registrar -->
         <Button
             android:id="@+id/btnGoToRegister"
             android:layout_width="wrap_content"
