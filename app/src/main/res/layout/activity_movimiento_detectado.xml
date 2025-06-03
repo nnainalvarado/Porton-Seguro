@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_marginTop="220dp"
     android:orientation="vertical"
     android:gravity="center"
-    android:padding="24dp"
+    android:padding="0dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white">
+
+
 
     <TextView
         android:text="Movimiento Detectado"
@@ -37,4 +40,6 @@
         android:text="Ir a Estado del Portón"
         android:layout_marginTop="16dp"
         android:visibility="gone" />
+
+        <include layout="@layout/navbar" />
 </LinearLayout>

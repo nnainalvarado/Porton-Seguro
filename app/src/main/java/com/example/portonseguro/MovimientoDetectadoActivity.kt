@@ -30,5 +30,34 @@ class MovimientoDetectadoActivity : AppCompatActivity() {
         btnIrEstado.setOnClickListener {
             startActivity(Intent(this, EstadoPortonActivity::class.java))
         }
+        val navbar = findViewById<LinearLayout>(R.id.navbar)
+        val iconPorton = navbar.findViewById<ImageView>(R.id.porton)
+        val iconHome = navbar.findViewById<ImageView>(R.id.home)
+        val iconRadar = navbar.findViewById<ImageView>(R.id.radar)
+
+        val underlinePorton = navbar.findViewById<View>(R.id.underline_porton)
+        val underlineHome = navbar.findViewById<View>(R.id.underline_home)
+        val underlineRadar = navbar.findViewById<View>(R.id.underline_radar)
+
+        fun setActive(tab: String) {
+            underlinePorton.visibility = if (tab == "porton") View.VISIBLE else View.GONE
+            underlineHome.visibility = if (tab == "home") View.VISIBLE else View.GONE
+            underlineRadar.visibility = if (tab == "radar") View.VISIBLE else View.GONE
+        }
+
+        setActive("radar")
+
+        iconPorton.setOnClickListener {
+            startActivity(Intent(this, EstadoPortonActivity::class.java))
+        }
+
+        iconHome.setOnClickListener {
+            startActivity(Intent(this, conexionPortonActivity::class.java))
+        }
+
+        iconRadar.setOnClickListener {
+            startActivity(Intent(this, MovimientoDetectadoActivity::class.java))
+        }
+
     }
 }

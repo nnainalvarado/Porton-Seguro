@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+   <LinearLayout
+       android:id="@+id/navbar"
+       android:layout_width="match_parent"
+       android:layout_height="70dp"
+       android:layout_alignParentBottom="true"
+       android:orientation="horizontal"
+       android:background="#EEEEEE"
+       android:weightSum="3"
+       android:paddingTop="0dp"
+       android:paddingBottom="0dp">
+
+      <!-- Portón -->
+      <LinearLayout
+          android:id="@+id/item_porton"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
+          android:orientation="vertical"
+          android:gravity="center">
+
+         <ImageView
+             android:id="@+id/porton"
+             android:layout_width="40dp"
+             android:layout_height="40dp"
+             android:src="@drawable/porton_icon"
+             android:clickable="true"
+             android:focusable="true" />
+
+         <View
+             android:id="@+id/underline_porton"
+             android:layout_width="match_parent"
+             android:layout_height="3dp"
+             android:background="@android:color/holo_blue_dark"
+             android:visibility="gone" />
+      </LinearLayout>
+
+      <!-- Home -->
+      <LinearLayout
+          android:id="@+id/item_home"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
+          android:orientation="vertical"
+          android:gravity="center">
+
+         <ImageView
+             android:id="@+id/home"
+             android:layout_width="40dp"
+             android:layout_height="40dp"
+             android:src="@drawable/home_icon"
+             android:clickable="true"
+             android:focusable="true" />
+
+         <View
+             android:id="@+id/underline_home"
+             android:layout_width="match_parent"
+             android:layout_height="3dp"
+             android:background="@android:color/holo_blue_dark"
+             android:visibility="gone" />
+      </LinearLayout>
+
+      <!-- Radar -->
+      <LinearLayout
+          android:id="@+id/item_radar"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
+          android:orientation="vertical"
+          android:gravity="center">
+
+         <ImageView
+             android:id="@+id/radar"
+             android:layout_width="40dp"
+             android:layout_height="40dp"
+             android:src="@drawable/radar_icon"
+             android:clickable="true"
+             android:focusable="true" />
+
+         <View
+             android:id="@+id/underline_radar"
+             android:layout_width="match_parent"
+             android:layout_height="3dp"
+             android:background="@android:color/holo_blue_dark"
+             android:visibility="gone" />
+      </LinearLayout>
+
+   </LinearLayout>
+
+</RelativeLayout>
+

@@ -1,51 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:padding="24dp">
+    android:background="#F5F5F5">
 
-    <ImageView
-        android:id="@+id/iconPorton"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/porton"
-        android:layout_marginBottom="24dp" />
+    <ScrollView
+        android:id="@+id/scrollContenido"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/navbar"
+        android:fillViewport="true">
 
-    <TextView
-        android:id="@+id/tituloApp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Portón Seguro"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="#212121"
-        android:layout_marginBottom="8dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="24dp">
 
-    <TextView
-        android:id="@+id/estadoConexion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Desconectado"
-        android:textSize="16sp"
-        android:textColor="#757575"
-        android:layout_marginBottom="24dp" />
+            <ImageView
+                android:id="@+id/iconPorton"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/porton"
+                android:layout_marginBottom="24dp" />
 
-    <Button
-        android:id="@+id/btnConectar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Conectar portón"
-        android:backgroundTint="#2196F3"
-        android:textColor="#FFFFFF" />
-    <Button
-        android:id="@+id/btnDesconectar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Desconectar portón"
-        android:backgroundTint="#F44336"
-        android:textColor="#FFFFFF"
-        android:visibility="gone" />
-</LinearLayout>
+            <TextView
+                android:id="@+id/tituloApp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Portón Seguro"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#212121"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/estadoConexion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Desconectado"
+                android:textSize="16sp"
+                android:textColor="#757575"
+                android:layout_marginBottom="24dp" />
+
+            <Button
+                android:id="@+id/btnConectar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Conectar portón"
+                android:backgroundTint="#2196F3"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/btnDesconectar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Desconectar portón"
+                android:backgroundTint="#F44336"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <include layout="@layout/navbar" />
+</RelativeLayout>

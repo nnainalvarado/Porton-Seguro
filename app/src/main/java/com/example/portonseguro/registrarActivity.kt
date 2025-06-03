@@ -19,6 +19,7 @@ class registrarActivity : AppCompatActivity() {
         val emailRegister = findViewById<EditText>(R.id.emailRegister)
         val passwordRegister = findViewById<EditText>(R.id.passwordRegister)
         val btnRegister = findViewById<Button>(R.id.btnRegister)
+        val btnGoToLogin = findViewById<Button>(R.id.btnGoToLogin) // ← AQUÍ
 
         btnRegister.setOnClickListener {
             val email = emailRegister.text.toString()
@@ -34,6 +35,11 @@ class registrarActivity : AppCompatActivity() {
                         Toast.makeText(this, "Error al registrarse", Toast.LENGTH_SHORT).show()
                     }
                 }
+        }
+
+        btnGoToLogin.setOnClickListener {
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
         }
     }
 }
