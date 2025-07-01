@@ -21,6 +21,10 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.android.volley.Request
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
+import com.android.volley.Response
 
 class conexionPortonActivity : AppCompatActivity() {
     private var conectado = false
@@ -37,8 +41,25 @@ class conexionPortonActivity : AppCompatActivity() {
         actualizarEstado(estadoConexion, btnConectar, btnDesconectar)
 
         btnConectar.setOnClickListener {
-            conectado = true
-            actualizarEstado(estadoConexion, btnConectar, btnDesconectar)
+            val url = "http://192.168.1.100/estado" // reemplaza con la IP de tu Wemos
+
+            val requestQueue = Volley.newRequestQueue(this)
+            val stringRequest = StringRequest(
+                Request.Method.GET, url,
+                Response.Listener { response ->
+                    if (response.contains("ok", ignoreCase = true)) {
+                        conectado = true
+                        actualizarEstado(estadoConexion, btnConectar, btnDesconectar)
+                        Toast.makeText(this, "Conectado al Wemos", Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(this, "Respuesta desconocida del Wemos", Toast.LENGTH_SHORT).show()
+                    }
+                },
+                Response.ErrorListener {
+                    Toast.makeText(this, "No se pudo conectar al Wemos", Toast.LENGTH_SHORT).show()
+                }
+            )
+            requestQueue.add(stringRequest)
         }
 
         btnDesconectar.setOnClickListener {

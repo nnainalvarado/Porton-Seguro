@@ -62,4 +62,8 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
     implementation("androidx.appcompat:appcompat:1.7.0")
     implementation (libs.play.services.auth)
+    implementation ("com.android.volley:volley:1.2.1")
+    implementation ("com.google.firebase:firebase-database-ktx:20.3.0")
+    implementation ("androidx.core:core-ktx:1.12.0")
+
 }
