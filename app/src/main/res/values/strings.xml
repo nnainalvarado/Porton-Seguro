@@ -9,4 +9,5 @@
     <string name="title_activity_conexion_porton">conexionPortonActivity</string>
     <string name="title_activity_navbar">navbarActivity</string>
     <string name="title_activity_ajustes">AjustesActivity</string>
+    <string name="title_activity_fcmservice">FCMService</string>
 </resources>

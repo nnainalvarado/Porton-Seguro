@@ -28,7 +28,7 @@ class LoginActivity : AppCompatActivity() {
             auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
-                        startActivity(Intent(this, conexionPortonActivity::class.java))
+                        startActivity(Intent(this, ConexionPortonActivity::class.java))
                         finish()
                     } else {
                         Toast.makeText(this, "Error al iniciar sesión", Toast.LENGTH_SHORT).show()

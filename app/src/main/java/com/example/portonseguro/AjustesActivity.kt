@@ -15,6 +15,7 @@ import androidx.core.app.NotificationManagerCompat
 import com.example.portonseguro.R.id.navbar
 import android.os.CountDownTimer
 import android.os.Handler
+import com.example.portonseguro.ConexionPortonActivity
 
 
 
@@ -120,7 +121,7 @@ class AjustesActivity : AppCompatActivity() {
         }
 
         iconHome.setOnClickListener {
-            startActivity(Intent(this, conexionPortonActivity::class.java))
+            startActivity(Intent(this, ConexionPortonActivity::class.java))
         }
 
         iconRadar.setOnClickListener {

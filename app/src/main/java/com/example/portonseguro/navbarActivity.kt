@@ -32,7 +32,7 @@ class navbarActivity : ComponentActivity() {
                 startActivity(Intent(this, EstadoPortonActivity::class.java))
             }
             home?.setOnClickListener {
-                startActivity(Intent(this, conexionPortonActivity::class.java))
+                startActivity(Intent(this, ConexionPortonActivity::class.java))
             }
             radar?.setOnClickListener {
                 startActivity(Intent(this, MovimientoDetectadoActivity::class.java))

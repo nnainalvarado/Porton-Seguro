@@ -53,6 +53,9 @@ dependencies {
     implementation(libs.androidx.credentials)
     implementation(libs.androidx.credentials.play.services.auth)
     implementation(libs.googleid)
+    implementation(libs.material)
+    implementation(libs.androidx.activity)
+    implementation(libs.androidx.constraintlayout)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -65,5 +68,5 @@ dependencies {
     implementation ("com.android.volley:volley:1.2.1")
     implementation ("com.google.firebase:firebase-database-ktx:20.3.0")
     implementation ("androidx.core:core-ktx:1.12.0")
-
+    implementation ("com.google.firebase:firebase-messaging:23.4.1")
 }
